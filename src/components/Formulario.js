@@ -27,7 +27,6 @@ const Formulario = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hola");
     const nuevaCita = {
       nombreMascota,
       nombreDuenio,
@@ -35,16 +34,19 @@ const Formulario = () => {
       hora,
       sintomas,
     };
-    console.log(nuevaCita);
     // Actualizar el arreglo de colores
     setArregloCitas([...arregloCitas, nuevaCita]);
     limpiarFormulario();
   };
 
   const borrarCita = (posicion) => {
-    console.log(posicion);
-    let arregloModificado = arregloCitas.splice(posicion, 1);
-    setArregloCitas(arregloModificado);
+    let arregloModificadoCitas = [];
+    for (var i = 0; i < arregloCitas.length; i++) {
+      arregloModificadoCitas.push(arregloCitas[i]);
+    }
+
+    arregloModificadoCitas.splice(posicion, 1);
+    setArregloCitas(arregloModificadoCitas);
   };
 
   return (
