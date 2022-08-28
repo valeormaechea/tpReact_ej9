@@ -3,7 +3,7 @@ import { Card, Button, Row, Col } from "react-bootstrap";
 
 const CardCita = (props) => {
   return (
-    <div className="mx-3 mb-3 col-4">
+    <div className="mx-3 mb-3 col-5">
       <Card>
         <Card.Header>
           <Card.Title>Mascota: {props.cita.nombreMascota}</Card.Title>
