@@ -41,6 +41,12 @@ const Formulario = () => {
     limpiarFormulario();
   };
 
+  const borrarCita = (posicion) => {
+    console.log(posicion);
+    let arregloModificado = arregloCitas.splice(posicion, 1);
+    setArregloCitas(arregloModificado);
+  };
+
   return (
     <article>
       <Card className="mt-5">
@@ -104,7 +110,10 @@ const Formulario = () => {
           </Form>
         </Card.Body>
       </Card>
-      <ListaCitas></ListaCitas>
+      <ListaCitas
+        arregloCitas={arregloCitas}
+        borrarCita={borrarCita}
+      ></ListaCitas>
     </article>
   );
 };
